@@ -78,17 +78,23 @@ $ psql
 
 postgres=#create role vagrant with password 'vagrant';
 CREATE ROLE
+
 postgres=# alter role vagrant with superuser;
 ALTER ROLE
+
 postgres=# alter role vagrant with createdb;
 ALTER ROLE
+
 postgres=# alter role vagrant with createuser;
 ALTER ROLE
+
 postgres=# \q
-postgres@vagrant-ubuntu-trusty-64:~$ exit
-logout
+
 vagrant@vagrant-ubuntu-trusty-64:~$ sudo -i -u vagrant
+
 vagrant=# alter role vagrant login;
+
+change the permission to owner:
 vagrant=# ALTER DATABASE news OWNER to vagrant;
 
 change the database by using following
